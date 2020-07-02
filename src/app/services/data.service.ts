@@ -18,7 +18,7 @@ constructor(private http: HttpClient){
             let csvToRowArray = data.split("\n");
             for (let index = 1; index < csvToRowArray.length - 1; index++) {
               let row = csvToRowArray[index].split(",");
-              let ligneProduit = new LigneProduit( row[0], row[1],row[2],parseInt(row[3]),parseInt(row[4]));
+              let ligneProduit = new LigneProduit( row[0], row[1],row[2],parseInt(row[3]),parseInt(row[4]),row[5]);
               let nomRayon = ligneProduit.rayon.nom;
               let nomProduit = ligneProduit.produit.nom;
               if (!this.rayons.has(nomRayon))
@@ -27,7 +27,6 @@ constructor(private http: HttpClient){
               }
               this.rayons.get(nomRayon).push(ligneProduit.produit);
             }
-            console.log(this.rayons);
         },
         error => {
             console.log(error);

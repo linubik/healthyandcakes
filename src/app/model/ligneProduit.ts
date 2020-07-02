@@ -4,8 +4,8 @@ import { Rayon } from './rayon';
 export class LigneProduit {
   rayon : Rayon;
   produit : Produit;
-  constructor(nomRayon:string,nomProduit:string,goutsProduit:string,noteProduit:number,prixProduit:number){
+  constructor(nomRayon:string,nomProduit:string,goutsProduit:string,noteProduit:number,prixProduit:number,imageProduit:string){
     this.rayon = new Rayon(nomRayon);
-    this.produit = new Produit(nomProduit,goutsProduit,prixProduit,noteProduit);
+    this.produit = new Produit(nomProduit,goutsProduit,prixProduit,noteProduit,imageProduit);
   }
 }
